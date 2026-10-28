@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulário interativo · HTML + CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="wrap">
+
+   
+    <form class="card" action="#sucesso" method="get">
+
+      <header class="head" style="--i:0">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h1>Vamos conversar?</h1>
+          <p class="lead">Preencha os campos e acompanhe o progresso no círculo.</p>
+        </div>
+        <div class="ring" role="img" aria-label="Progresso de preenchimento"></div>
+      </header>
+
+      <div class="f" style="--i:1">
+        <input id="nome" name="nome" type="text" placeholder=" " required
+               pattern="\S+(\s+\S+)+" autocomplete="name">
+        <label for="nome">Nome completo</label>
+        <span class="ok" aria-hidden="true"></span>
+        <small>Informe nome e sobrenome.</small>
+      </div>
+
+      <div class="f" style="--i:2">
+        <input id="email" name="email" type="email" placeholder=" " required
+               autocomplete="email">
+        <label for="email">E-mail</label>
+        <span class="ok" aria-hidden="true"></span>
+        <small>Digite um e-mail válido, como nome@site.com.</small>
+      </div>
+
+      <fieldset class="chips" style="--i:3">
+        <legend>Assunto</legend>
+        <label><input type="radio" name="assunto" value="projeto" required><span>Projeto</span></label>
+        <label><input type="radio" name="assunto" value="vaga"><span>Vaga</span></label>
+        <label><input type="radio" name="assunto" value="duvida"><span>Dúvida</span></label>
+        <label><input type="radio" name="assunto" value="outro"><span>Outro</span></label>
+        <small>Escolha um assunto.</small>
+      </fieldset>
+
+      <div class="f" style="--i:4">
+        <textarea id="mensagem" name="mensagem" rows="3" placeholder=" " required
+                  minlength="20"></textarea>
+        <label for="mensagem">Mensagem</label>
+        <span class="ok" aria-hidden="true"></span>
+        <small>Escreva pelo menos 20 caracteres.</small>
+      </div>
+
+      <label class="switch" style="--i:5">
+        <input type="checkbox" name="aceite" required>
+        <i aria-hidden="true"></i>
+        <span>Aceito receber a resposta por e-mail</span>
+      </label>
+
+      <button class="btn" type="submit" style="--i:6">
+        <span>Enviar mensagem</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+
+    </form>
+
+  </main>
+
+  <!-- Tela de sucesso: aparece quando a URL termina em #sucesso -->
+  <div class="done" id="sucesso" role="dialog" aria-label="Mensagem enviada">
+    <div class="box">
+      <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.2 3.2L17 9"/></svg>
+      <h2>Mensagem enviada!</h2>
+      <p>Obrigado pelo contato. Respondo assim que possível.</p>
+      <a class="btn ghost" href="index.html">Enviar outra</a>
+    </div>
+  </div>
+
+</body>
+</html>
